@@ -1,0 +1,49 @@
+<html>
+    <head><title>{% block title %}base{% endblock %}</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+              }
+              
+              th, td {
+                padding: 10px;
+              }
+            .container{
+                disply:flex;
+            }
+            .leftmenu{
+                float:left;
+                height:100vh;
+                width:30vh;
+            }
+            .rightmenu{
+            }
+        </style>
+    </head>
+        <body>
+            <div class="container">
+                <div class="leftmenu">
+                    <div id="MainBox">
+                        <br><br>
+                        <ul>
+                            <li><a href="/hhome/" target="main">Home Page</a></li>
+                            <li><a href="/add_teach/" target="main">Add Teacher</a></li>
+                            <li><a href="/showstud/" target="main">Student List</a></li>
+                            
+                            <li><a href="/ancmnts/" target="main">Add Announcments</a></li>
+                            
+                            <li><a href="/addtutor/" target="main">Assign Tutor</a></li>
+                            <li><a href="/add_feedback/" target="main">Feedback</a></li>
+                         </ul>
+                     </div>
+                </div>
+                <div class="rightmenu">
+                    {% block rightmenu %}
+                    
+
+                    {% endblock %}
+
+                </div>
+            </div>
+
+        </body>

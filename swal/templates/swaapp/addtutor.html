@@ -1,0 +1,28 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/add_tutor/" method="post">
+    {% csrf_token %}
+    Academic Year :
+    <select id="year" name="year" value="{{ year }}">
+        {% for results2 in years %}
+        <option value="{{ results2.year }}">{{ results2.year }}</option>
+        {% endfor %}
+    </select><br>
+    Department :<br>
+    <select id="hdpt" name="hdpt" value="{{ hdpt }}">
+        {% for results1 in department %}
+        <option value="{{ results1.hdpt }}">{{ results1.hdpt }}</option>
+        {% endfor %}
+    </select><br>
+    Tutor :<br>
+    <select id="tname" name="tname" value="{{ tname }}">
+        {% for results in teachers %}
+        <option value="{{ results.tname }}">{{ results.tname }}</option>
+        {% endfor %}
+    </select><br>
+    <button type="submit" value="Submit">Submit</button>
+
+</form>
+
+{% endblock %}

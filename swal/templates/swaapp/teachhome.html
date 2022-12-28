@@ -1,0 +1,28 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+{% csrf_token %}
+<main>
+        <div>
+            <div>
+                <div>
+                {% for results in showteach %} 
+                    <p>{% if results.timage %}
+                         <img src="{{ results.timage.url }}" width="150" height="200">
+                       {% endif %}<br>
+                    </p>
+                    Hey,<br>
+                    {{results.tname}}<br>
+                    <p>{{results.tid}}<br>
+                    {{results.dptname}}<br></p>
+                {% endfor %}
+                </div>
+                <div>
+                    Notifications :<br>
+                    <textarea rows="2" cols="20">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

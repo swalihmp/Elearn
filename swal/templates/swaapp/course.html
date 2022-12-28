@@ -1,0 +1,65 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+            {% for results in showcourse %} 
+            <form action="/chattstud/{{results.subteachid}}" method="post">
+                {% csrf_token %}
+                Subject Code :{{results.subcode}}<br>
+                Subject Name :{{results.subname}}<br>
+                Teacher Id :{{results.subteachid}}<br>
+                Teacher Name :{{results.subteach}}<br>
+            <p>
+                <textarea cols="70" rows="10" readonly align="left">
+                    {% for status in substatus %}
+                       Statusd :{{status.status}}
+                       Date :{{status.stime}} 
+                    {% endfor %} 
+                </textarea> 
+            </p>
+        <p>
+                Ask A Questi0n :<br>
+                <input type="text" id="quest" name="quest" value="{{ quest }}">
+                <button type="submit">Ask</button>
+            </form>
+            {% endfor %} 
+            <textarea cols="50" rows="20" readonly>
+            {% for studs in studmsg %}
+               You Asked :{{studs.quest}}
+               Miss Replied :{{studs.replay}} 
+            {% endfor %} 
+            </textarea> 
+        </p>  
+        <div>
+            Pending Works :<br>
+        <p>
+        <table>
+            <tr>
+                <th>Work Id</th>
+                <th>Definition</th>
+                <th>Work File</th>
+                <th>End date</th>
+                <th>Upload Answer</th>
+            </tr>
+            {% for subworks in subworks %} 
+            <form action="/uploadwork/{{subworks.workid}}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <tr>
+                <td>{{subworks.workid}}</td>
+                <td>{{subworks.defwork}}</td>
+                <td>
+                {% if subworks.wfile %}
+                <a href="{{ subworks.wfile.url }}">Open</a>
+                {% endif %}<br>
+                </td>
+                <td>{{subworks.edate}}</td>
+                <td>
+                <input type="file" id="sfile" name="sfile" value="{{ sfile }}">
+                <button type="submit">Upload</button>
+                </td>
+            </tr>
+            </form>
+            {% endfor %} 
+        </table>    
+        </p>
+        </div> 
+{% endblock %}

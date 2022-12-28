@@ -1,0 +1,21 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<main>
+    <div>
+        <div>
+            <div>
+            {% for results in showhod %} 
+                <p>{% if results.himage %}
+                     <img src="{{ results.himage.url }}" width="150" height="200">
+                   {% endif %}<br>
+                </p>
+                Hey,<br>
+                {{results.hname}}<br>
+                <p>{{results.hdpt}} HOD<br></p>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

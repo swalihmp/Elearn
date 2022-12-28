@@ -1,0 +1,22 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+        <section>
+                    {% for results in showsub %}
+                    <form action="/course/{{results.subname}}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            {{ results.subname }}<br>
+                            {{ results.subteach }}<br>
+                             <button type="submit">View</button><br><br>
+                        </div>
+                    </form>
+                    {% endfor %}
+                </div>
+            </div>   
+        </section>
+{% endblock %}
+
+
+
+        

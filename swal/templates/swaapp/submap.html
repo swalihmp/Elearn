@@ -1,0 +1,18 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/submap/" method="post">
+    {% csrf_token %}
+    <p>Select Subject  :
+        <select id="subname" name="subname" value="{{ subname }}">
+            {% for subjects in showsub %}
+            <option value="{{ subjects.subname }}">{{ subjects.subname }}</option>
+            {% endfor %}
+        </select><br>
+    </p>
+    <p>Add Status :
+        <input type="text" id="status" name="status" value="{{ status }}"><br>
+    </p>
+    <button type="submit" value="Submit">Submit</button>
+</form>
+{% endblock %}

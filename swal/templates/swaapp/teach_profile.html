@@ -1,0 +1,18 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<main>
+    <div align="center">
+        {% for results in profile %} 
+            {% if results.timage %}
+              <img src="{{ results.timage.url }}" width="150" height="200">
+            {% endif %}<br>
+            <b>Teacher Id :</b>{{results.tid}}<br>
+            <b>Name :</b>{{results.tname}}<br>
+            <b>D O B :</b>{{results.tdob}}<br>
+            <b>Mobile :</b>{{results.tmob}}<br>
+            <b>Department :</b>{{results.dptname}}<br>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

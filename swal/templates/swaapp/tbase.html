@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+    <head><title>{% block title %}base{% endblock %}</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+              }
+              
+              th, td {
+                padding: 10px;
+              }
+            .container{
+                disply:flex;
+            }
+            .leftmenu{
+                float:left;
+                height:100vh;
+                width:30vh;
+            }
+            .rightmenu{
+            }
+        footer{
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 2px;
+        }
+        a:link{color:#0000ff;}
+        a:visited{color:#0000a0;}
+        a:hover{color:#0000ff;}
+        a:active{color:#ff8000;}
+        </style>
+    </head>
+        <body>
+            {% csrf_token %}
+            <div class="container">
+                <div class="leftmenu">
+                    <div id="MainBox">
+                        <br><br>
+                        <ul>
+                            <li><a href="/teachhome/" target="main">Home</a></li>
+                            <li><a href="/teach_profile/" target="main">View Profile</a></li>
+                            <li><a href="/addstud/" target="main">Add Student</a></li>
+                            <li><a href="/add_sub/" target="main">Add Subject</a></li>
+                            <li><a href="/addwork/" target="main">Add Works</a></li>
+                            <li><a href="/liveclass/" target="main">Create Live Class</a></li>
+                            <li><a href="/addattendance/" target="main">Attendance</a></li>
+                            
+                            <li><a href="/showstud/" target="main">Student List</a></li>
+                            <li><a href="/addmark/" target="main">Upload Marks</a></li>
+                            <li><a href="/add_mater/" target="main">Upload Materials</a></li>
+                           
+                            <li><a href="/sub_map/" target="main">Subject Status</a></li>
+                            <li><a href="/showchat/" target="main">Chat With Student</a></li>
+                            <li><a href="/add_feedback/" target="main">Feedback</a></li>
+                         </ul>
+                     </div>
+                </div>
+                <div class="rightmenu">
+                    {% block rightmenu %}
+                    
+
+                    {% endblock %}
+
+                </div>
+            </div>
+
+        </body>

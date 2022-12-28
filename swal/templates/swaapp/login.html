@@ -1,0 +1,70 @@
+<html>
+    <head><title>Login</title><head>
+        {% load static%}
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+        <body>
+
+
+            <section class="vh">
+                <div class="container-fluid h-custom">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-9 col-lg-6 col-xl-5">
+                      <img src="media/img/loginimg-02-02.svg"
+                        class="img-fluid" alt="Sample image" style="border-radius: 1rem 1rem 1rem 1rem;">
+                    </div>
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                      <form action="/loginview" method="post">
+                        {% csrf_token %}
+              
+                        <div class="divider d-flex align-items-center  mb-5 mx-3">
+                            <p class="text-center fw-bold mx-3 mb-0" style="font-size:1.3rem; color: #3E619B;"  >Sign in</p>
+                        </div>
+              
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                          <input type="text" id="uid" name="uid" value="{{ uid }}" class="form-control form-control-lg"
+                            placeholder="Enter username" />
+                          <label class="form-label" for="uid" style="color: #42506B;">Username</label>
+                        </div>
+              
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                          <input type="text" id="upass" name="upass" value="{{ upass }}" class="form-control form-control-lg"
+                            placeholder="Enter password" />
+                          <label class="form-label" for="upass" style="color: #42506B;">Password</label>
+                        </div>
+              
+                        <div class="d-flex justify-content-between align-items-center">
+                          <!-- Checkbox -->
+                          <div class="form-check mb-0">
+                            
+                          </div>
+                          <a href="/changpass" class="text-body">Change password?</a>
+                        </div>
+              
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                          <button type="submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #EF4B4C; border-color: #EF4B4C;">Login</button>
+                          
+              
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                
+              </section>
+
+
+
+            <!--<form action="/loginview" method="post">
+                {% csrf_token %}
+                User Id : <br><br>
+                <input type="text" id="uid" name="uid" value="{{ uid }}"><br><br>
+                Password : (Date Should Be in yyyy-mm-dd)<br><br>
+                <input type="text" id="upass" name="upass" value="{{ upass }}"><br><br>
+                <button type="submit">Submit</button><br>
+                <a href="/changpass">Change Password</a>
+            </form> -->
+        </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head><title>Feedback</title>
+    </head>
+    <body>
+    <form action="/addfeedback/" method="post">
+        {% csrf_token %}
+        <div>
+        Your Feedback : <br>
+            <input type="text" id="feedback" name="feedback" value="{{ feedback }}"><br>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </body>
+</html>

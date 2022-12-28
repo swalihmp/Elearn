@@ -1,0 +1,44 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+        <form action="/add_stud" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Admission Number : <br>
+            <input type="text" id="adnum" name="adnum" value="{{ adnum }}"><br>
+            Name : <br>
+            <input type="text" id="name" name="name" value="{{ name }}"><br>
+            Dob <br>
+            <input type="date" id="dob" name="dob" value="{{ dob }}"><br>
+            Mobile <br>
+            <input type="text" id="mob" name="mob" value="{{ mob }}"><br><br>
+            Department :<br>
+            <select id="sdptname" name="sdptname" value="{{ sdptname }}">
+              {% for results in showdpt %}
+              <option value="{{ results.dptname }}">{{ results.dptname }}</option>
+              {% endfor %}
+            </select><br>
+
+            Semester :
+            <select id="semno" name="semno" value="{{ semno }}">
+               <option selected disabled="true">--Select Semester--</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select><br><br>
+            Academic Year :<br>
+            <select id="year" name="year" value="{{ year }}">
+              {% for results1 in showyear %}
+              <option value="{{ results1.year }}">{{ results1.year }}</option>
+              {% endfor %}
+            </select><br><br>
+            Upload Student Image :
+            <input type="file" id="simage" name="simage" value="{{ simage }}"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        {% endblock %}
+    

@@ -1,0 +1,20 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<main>
+    <div align="center">
+        {% for results in profile %} 
+            {% if results.simage %}
+              <img src="{{ results.simage.url }}" width="150" height="200">
+            {% endif %}<br>
+            <b>Ad.Num :</b>{{results.adnum}}<br>
+            <b>Name :</b>{{results.name}}<br>
+            <b>D O B :</b>{{results.dob}}<br>
+            <b>Mobile :</b>{{results.mob}}<br>
+            <b>Department :</b>{{results.sdptname}}<br>
+            <b>Sem Num :</b>{{results.semno}}<br>
+        {% endfor %}
+    </div>
+    
+</main>
+{% endblock %}

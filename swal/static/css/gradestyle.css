@@ -1,0 +1,13 @@
+
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  content: "★";
+  color: #e52;
+  text-shadow: 0 0 1px #333;
+  /* the hidden clearer */
+}

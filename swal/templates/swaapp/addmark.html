@@ -1,0 +1,68 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/view_works/" method="post">
+    {% csrf_token %}
+    <p>Select Subject  :
+        <select id="subname" name="subname" value="{{ subname }}">
+            {% for results1 in showdpt1 %}
+            <option value="{{ results1.subname }}">{{ results1.subname }}</option>
+            {% endfor %}
+        </select><br>
+    </p>
+    <P><button type="submit" value="Submit">Show</button></p>
+</form>
+
+<form action="/show_works/" method="post">
+    {% csrf_token %}
+    <p>Select Work  :
+        <select id="workname" name="workname" value="{{ workname }}">
+            {% for work in workes %}
+            <option value="{{ work.workname }}">{{ work.workname }}</option>
+            {% endfor %}
+        </select><br>
+    </p>
+    <P><button type="submit" value="Submit">Show</button></p>
+</form>
+
+<form action="/show_files/" method="post">
+    {% csrf_token %}
+    <p>Select File  :
+        <select id="studname" name="studname" value="{{ studname }}">
+            {% for student in students %}
+            <option value="{{ student.sname }}">{{ student.sname }}</option>
+            {% endfor %}
+        </select><br>
+    </p>
+    <P><button type="submit" value="Submit">Show</button></p>
+</form>
+<form action="/add_mark/" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>Work Name</th>
+            <th>Student Name</th>
+            <th>Student id</th>
+            <th>Student Work</th>
+            <th>Mark</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+            <td>{{file.wname}}</td>
+            <td>{{file.sname}}</td>
+            
+            <td>{{file.sid}}</td>
+            <td>
+            {% if file.sfile %}
+            <a href="{{ file.sfile.url }}">Open</a>
+            {% endif %}<br>
+            </td>
+            <td>
+                <input type="text" id="mark" name="mark" value="{{ mark }}"><br>
+                <button type="submit">Upload</button>
+            </td>
+        </tr>
+        {% endfor %} 
+    </table>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+        <form action="/add_teach/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Teacher Id : <br>
+            <input type="text" id="tid" name="tid" value="{{ tid }}"><br>
+            Name : <br>
+            <input type="text" id="tname" name="tname" value="{{ tname }}"><br>
+            Dob <br>
+            <input type="date" id="tdob" name="tdob" value="{{ tdob }}"><br>
+            MObile <br>
+            <input type="text" id="tmob" name="tmob" value="{{ tmob }}"><br>
+            Department :<br>
+            <select id="dptname" name="dptname" value="{{ dptname }}">
+                <option selected disabled="true">--Select Department--</option>
+                <option value="CSE">CSE</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="CIVIL">MECH</option>
+                <option value="CIVIL">ECE</option>
+                <option value="CIVIL">EEE</option>
+                <option value="GENERAL">GENERAL</option>
+            </select><br><br> 
+            Upload Teacher Image :
+            <input type="file" id="timage" name="timage" value="{{ timage }}"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+{% endblock %}
+    

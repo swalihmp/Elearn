@@ -1,0 +1,18 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<table>
+    <tr>
+        <th>Semester</th>
+        <th>Alloted Credit</th>
+        <th>Minimum Credit Required</th>
+    </tr>
+    {% for datas in credit %}
+    <tr>
+        <td>{{datas.semno}}</td>
+        <td>{{datas.creditallo}}</td>
+        <td>{{datas.creditmin}}</td>
+    </tr>
+    {% endfor %} 
+</table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/addmater/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<p>Select Subject  :
+    <select id="subname" name="subname" value="{{ subname }}">
+        {% for results in showsub %}
+        <option value="{{ results.subname }}">{{ results.subname }}</option>
+        {% endfor %}
+    </select><br>
+</p>
+<p>Select Material :
+    <input type="file" id="mater" name="mater" value="{{ mater }}">
+</p>
+<p>
+    <button type="submit" value="Submit">Submit</button>
+</p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<table>
+    <tr>
+        <th>Subject Name</th>
+        <th>Work Name</th>
+        <th>Mark</th>
+    </tr>
+    {% for marks in viewmark %}
+    <tr>
+        <td>{{marks.subname}}</td>
+        <td>{{marks.wname}}</td>
+        <td>{{marks.mark}}</td>
+    </tr>
+    {% endfor %} 
+</table>
+{% endblock %}

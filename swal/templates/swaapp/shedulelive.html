@@ -1,0 +1,29 @@
+<html>
+    <head><title>Schedule Live</title>
+    </head>
+    <body>
+        <form action="/schedulelive/" method="POST">
+        <p>Select Subject  :
+            <select name="Subs" class="form-control">
+                 {% for results in showsubs %}
+                 <option value="{{results.id}}">{{ results.sname}}</option>
+                 {% endfor %}
+             </select>
+         </p>
+
+         <p>Choose Date and Time
+            <input type="datetime-local" id="clsdate" name="clsdate">
+         </p>
+         <p>
+             <button type="submit" form="liveclass" value="View">View Class</button>
+         </p>
+
+         <p>
+             <textarea id="subcomment" name="subcomment" rows="5" cols="20"></textarea>
+         </p>
+         <p>
+             <button type="submit" form="liveclass" value="Submit">Submit</button>
+         </p>
+        </form>
+    </body>
+</html>

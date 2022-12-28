@@ -1,0 +1,24 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<section>
+<div>
+    {% for chats in chatting %} 
+    <form action="/chatreplay/{{chats.chatid}}" method="post">
+        {% csrf_token %}
+        Chat Id :{{chats.chatid}}<br>
+        Stud :{{chats.stud_name}}<br>
+        Sub :{{chats.subname}}<br>
+        Quest :{{chats.quest}}<br>
+        Status :{{chats.status}}<br>
+        Replay :{{chats.replay}}<br>
+    <input type="text" id="replay" name="replay" value="{{ replay }}">
+    <button type="submit">Replay</button><br>
+    </form>
+    {% endfor %} 
+    {% for message in messages %} 
+        <h4><p style="color: rgb(250, 6, 6);text-align:center">{{message}}</p></h4>
+    {% endfor %} 
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/add_work/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<p>Work Name : <br>
+    <input type="text" id="workname" name="workname" value="{{ workname }}"><br>
+</p>
+<p>Department :
+    <select id="dptname" name="dptname" value="{{ dptname }}">
+        {% for results in showdpt %}
+        <option value="{{ results.dptname }}">{{ results.dptname }}</option>
+        {% endfor %}
+    </select><br>
+</p>
+
+<p>Sem No :
+    <select id="semno" name="semno" value="{{ semno }}">
+        <option selected disabled="true">--Select Semester--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select><br>
+</p>
+
+<p>Select Subject  :
+    <select id="subname" name="subname" value="{{ subname }}">
+        {% for results1 in showdpt1 %}
+        <option value="{{ results1.subname }}">{{ results1.subname }}</option>
+        {% endfor %}
+    </select><br>
+</p>
+
+<p><u>Definition of Work :</u></p>
+    <textarea id="defwork" name="defwork" rows="4" cols="30" value="{{ defwork }}">
+    </textarea>
+
+<p>Upload Question or document :
+    <input type="file" id="wfile" name="wfile" value="{{ wfile }}">
+</p>
+
+<p>Start Date : 
+    <input type="date" id="sdate" name="sdate" value="{{ sdate }}">
+</p>
+
+<p>End Date :
+    <input type="datetime-local" id="edate" name="edate" value="{{ edate }}">
+</p>
+
+<button type="submit" value="Submit">Submit</button>
+</form>
+{% endblock %}

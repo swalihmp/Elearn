@@ -1,0 +1,51 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+    <form action="/studli/" method="post">
+        {% csrf_token %}
+        Department :
+        <select id="dptname" name="dptname" value="{{ dptname }}">
+            {% for results in showdpt %}
+            <option value="{{ results.hdpt }}">{{ results.hdpt }}</option>
+            {% endfor %}
+        </select><br>
+        Semester :
+        <select id="semno" name="semno" value="{{ semno }}">
+            <option selected disabled="true">--Select Semester--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select><br><br>
+        <button type="submit">Show</button>
+    </form>
+    <table style="width: 1000px">
+        <tr>
+            <th>Admission Number</th>
+            <th>Name</th>
+            <th>Dob</th>
+            <th>Mob</th>
+            <th>Sem</th>
+        </tr>
+        {% for student in students %} 
+        <form action="/editstud/{{student.adnum}}" method="post">
+            {% csrf_token %}
+        <tr>
+            <td>{{student.adnum}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.mob}}</td>
+            <td>{{student.semno}}</td>
+            <form action="/studli/" method="post">
+            {% csrf_token %}
+            <td><button type="submit">Edit</button><br>
+
+        </tr>
+    </form>
+        {% endfor %} 
+    </table>
+{% endblock %}

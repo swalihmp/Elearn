@@ -1,0 +1,606 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Subheader-->
+        <div class="subheader py-4 pt-lg-0 pb-lg-10" id="kt_subheader">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap">
+                <!--begin::Info-->
+                <div class="d-flex align-items-center py-2 mr-1">
+                    <!--begin::Aside Offcanvas Toggle-->
+                    <button class="btn btn-icon btn-hover-icon-primary mr-1 pl-0 justify-content-start d-none d-lg-flex" id="kt_aside_offcanvas_toggle">
+                        <span class="svg-icon svg-icon-2x">
+                            <!--begin::Svg Icon | path:/keen/theme/demo2/dist/svg/icons/Text/Toggle-Right.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22 11.5C22 12.3284 21.3284 13 20.5 13H3.5C2.6716 13 2 12.3284 2 11.5C2 10.6716 2.6716 10 3.5 10H20.5C21.3284 10 22 10.6716 22 11.5Z" fill="black"></path>
+                                    <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.5 20C15.3284 20 16 19.3284 16 18.5C16 17.6716 15.3284 17 14.5 17H3.5C2.6716 17 2 17.6716 2 18.5C2 19.3284 2.6716 20 3.5 20H14.5ZM8.5 6C9.3284 6 10 5.32843 10 4.5C10 3.67157 9.3284 3 8.5 3H3.5C2.6716 3 2 3.67157 2 4.5C2 5.32843 2.6716 6 3.5 6H8.5Z" fill="black"></path>
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon-->
+                        </span>
+                    </button>
+                    <!--end::Aside Offcanvas Toggle-->
+                    <!--begin::Page Heading-->
+                    <div class="d-flex flex-column mr-5">
+                        <!--begin::Page Title-->
+
+                        {% for results in showstud %} 
+                        <h4 class="text-dark font-weight-bold py-1 mr-5 my-0">
+                            <small class="text-muted">Hey, </small>
+                        {{results.name}}
+                        <br>
+                        S{{results.semno}}
+                        {{results.sdptname}}
+                    
+                        </h4
+                        
+                        {% endfor %};
+
+
+                        <!--end::Page Title-->
+                    </div>
+                    <!--end::Page Heading-->
+                </div>
+                <!--end::Info-->
+                <!--begin::Toolbar-->
+                <div class="d-flex align-items-center flex-wrap py-2">
+                    <!--begin::Daterange-->
+                   
+                   <div class="d-md-flex justify-content-between align-items-center text-md-start p-4">
+<div class="d-md-flex align-items-center">
+  <div class="img-thumbnail rounded-circle position-relative flex-shrink-0 mx-auto mb-2 mx-md-0 mb-md-0" style="width: 6.375rem;">
+
+   <!-- <div>
+        {% for results in showstud %} 
+            <p>{% if results.simage %}
+                 <img src="{{ results.simage.url }}" width="150" height="200">
+               {% endif %}<br>
+            </p>
+            Hey,<br>
+            {{results.name}}<br>
+            <p>S{{results.semno}}
+            {{results.sdptname}}<br></p>
+        {% endfor %};
+        </div>
+    -->
+
+        {% for results in showstud %} 
+        {% if results.simage %}
+    <img class="rounded-circle img-l" src="{{ results.simage.url }}" alt="profile img">
+    {% endif %}
+
+    {% endfor %}
+
+<a class="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0" href="#account-menu" data-bs-toggle="collapse" aria-expanded="false">
+    <i class="ci-menu me-2"></i>Account menu</a>
+</div>
+                    <!--end::Dropdown-->
+                </div>
+                <!--end::Toolbar-->
+            </div>
+        </div>
+        <!--end::Subheader--> 
+        <!--begin::Entry-->
+        <div class="d-flex flex-column-fluid">
+            <!--begin::Container-->
+            <div class="container">
+
+                <div class="row">
+                    <div class="owl-slider slick-list pt-10 pl-5 pr-5">
+    <div id="carousel" class="owl-carousel owl-loaded owl-drag">
+
+      
+
+     
+
+   
+
+       
+
+        
+
+       
+
+ 
+
+    <div class="owl-stage-outer owl-height" style="height: 325.90625px;"><div class="owl-stage" style="transform: translate3d(-2069px, 0px, 0px); transition: all 0.8s ease 0s; width: 4435px;"><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+         <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+        </div>
+    </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+          <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+        </div>
+      </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+         <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+        </div>
+      </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+    <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+       </div></div><div class="owl-item" style="width: 275.625px; margin-right: 20px;"><div class="item">
+        <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal">Websites with HTML</h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+    </div></div><div class="owl-item" style="width: 275.625px; margin-right: 20px;"><div class="item">
+       <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+     </div></div><div class="owl-item" style="width: 275.625px; margin-right: 20px;"><div class="item">
+     <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+        </div>
+     </div></div><div class="owl-item active" style="width: 275.625px; margin-right: 20px;"><div class="item">
+         <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+        </div>
+    </div></div><div class="owl-item active" style="width: 275.625px; margin-right: 20px;"><div class="item">
+          <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+        </div>
+      </div></div><div class="owl-item active" style="width: 275.625px; margin-right: 20px;"><div class="item">
+         <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+        </div>
+      </div></div><div class="owl-item active" style="width: 275.625px; margin-right: 20px;"><div class="item">
+    <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+       </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+        <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="/media/img/01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal">Websites with HTML</h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+    </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+       <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="02.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+            
+        </div>
+     </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+     <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="01.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+                
+            </div>
+            <!-- Card footer -->
+        </div>
+     </div></div><div class="owl-item cloned" style="width: 275.625px; margin-right: 20px;"><div class="item">
+         <div class="card h-100 pb-3">
+            <!-- Image -->
+            <img src="03.jpg" class="card-img-top" alt="course image">
+            <div class="card-body pb-0">
+                <!-- Badge and favorite -->
+                <div class="d-flex justify-content-between mb-2">
+                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                    
+                </div>
+                <!-- Title -->
+                <p class="mb-2 text-truncate-2">Far advanced</p>
+                <h5 class="card-title fw-normal"><a href="#">Websites with HTML</a></h5>
+                
+                <!-- Rating star -->
+            </div>
+            <!-- Card footer -->
+        </div>
+    </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+    </div>
+
+</div>
+
+                
+
+                    
+                 
+                
+                <!--begin::Row-->
+                <div class="row pt-10">
+                    <div class="col-xxl-4">
+                        <!--begin::List Widget 5-->
+                        <div class="card card-custom card-stretch gutter-b">
+                            <!--begin::Header-->
+                            <div class="card-header border-0 pt-5">
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label font-weight-bolder font-size-h4 text-dark-75">Timeline</span>
+                                    <span class="text-muted mt-3 font-weight-bold font-size-lg">8 New Updates</span>
+                                </h3>
+                                
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body pt-2">
+                                <div class="tab-content mt-5" id="myTabList5">
+                                    <!--begin::Tap pane-->
+                                    
+                                    <!--end::Tap pane-->
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade show active" id="kt_tab_list_5_2" role="tabpanel" aria-labelledby="kt_tab_list_5_2">
+                                        <!--begin::Timeline-->
+                                        <div class="timeline timeline-5">
+                                            <div class="timeline-items">
+                                                <!--begin::Item-->
+                                                <div class="timeline-item">
+                                                    <!--begin::Icon-->
+                                                    <div class="timeline-media bg-light-primary">
+                                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo2/dist/../src/svg/icons/General/Notifications1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"></path>
+<rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+</g>
+</svg><!--end::Svg Icon--></span>
+                                                    </div>
+                                                    <!--end::Icon-->
+                                                    <!--begin::Info-->
+                                                    <div class="timeline-desc timeline-desc-light-primary">
+                                                        <span class="font-weight-bolder text-primary">04:30 AM</span>
+                                                        <p class="font-weight-normal text-dark-50 pb-2">Many desktop publishing packages and web page editors now use Lorem Ipsum.</p>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <div class="timeline-item">
+                                                    <!--begin::Icon-->
+                                                    <div class="timeline-media bg-light-primary">
+                                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo2/dist/../src/svg/icons/General/Notifications1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"></path>
+<rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+</g>
+</svg><!--end::Svg Icon--></span>
+                                                    </div>
+                                                    <!--end::Icon-->
+                                                    <!--begin::Info-->
+                                                    <div class="timeline-desc timeline-desc-light-primary">
+                                                        <span class="font-weight-bolder text-primary">3:45 PM</span>
+                                                        <p class="font-weight-normal text-dark-50 pt-1 pb-2">To start a blog, think of a topic about and first brainstorm ways to write details</p>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <div class="timeline-item">
+                                                    <!--begin::Icon-->
+                                                    <div class="timeline-media bg-light-primary">
+                                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo2/dist/../src/svg/icons/General/Notifications1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"></path>
+<rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+</g>
+</svg><!--end::Svg Icon--></span>
+                                                    </div>
+                                                    <!--end::Icon-->
+                                                    <!--begin::Info-->
+                                                    <div class="timeline-desc timeline-desc-light-primary">
+                                                        <span class="font-weight-bolder text-primary">2:45 PM</span>
+                                                        <p class="font-weight-normal text-dark-50 pt-1 pb-2">There are many variations of passages of Lorem Ipsum available.</p>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <div class="timeline-item">
+                                                    <!--begin::Icon-->
+                                                    <div class="timeline-media bg-light-primary">
+                                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo2/dist/../src/svg/icons/General/Notifications1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"></path>
+<rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+</g>
+</svg><!--end::Svg Icon--></span>
+                                                    </div>
+                                                    <!--end::Icon-->
+                                                    <!--begin::Info-->
+                                                    <div class="timeline-desc timeline-desc-light-primary">
+                                                        <span class="font-weight-bolder text-primary">3:12 PM</span>
+                                                        <p class="font-weight-normal text-dark-50 pt-1 pb-2">Latin words, combined with a handful of model sentence structures.</p>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Item-->
+                                            </div>
+                                        </div>
+                                        <!--end::Timeline-->
+                                    </div>
+                                    <!--end::Tap pane-->
+                                </div>
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::List Widget 4-->
+
+
+                    </div>
+
+<div class="row col-xxl-8">
+
+<!-- Course item -->
+<div class="col-sm-6 col-lg-4 col-xl-3">
+<!-- Image -->
+<div class="card card-metro overflow-hidden rounded-3">
+    <div class="container"></div>
+    
+    <!-- Image overlay -->
+    <div class="card-img-overlay d-flex"> 
+        <!-- Info -->
+        <div class="mt-auto card-text">
+            <a href="#" class="text-white mt-auto h5 stretched-link"><img src="/media/img/01.jpg" alt=""></a>
+            <div class="text-white"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Course item -->
+<div class="col-sm-6 col-lg-4 col-xl-3">
+<!-- Image -->
+<div class="card card-metro overflow-hidden rounded-3">
+    <img src="pdf/01.jpg" alt="">
+    <!-- Image overlay -->
+    <div class="card-img-overlay d-flex"> 
+        <!-- Info -->
+        <div class="mt-auto card-text">
+            <a href="#" class="text-white mt-auto h5 stretched-link"></a>
+            <div class="text-white"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Course item -->
+<div class="col-sm-6 col-lg-4 col-xl-3">
+<!-- Image -->
+<div class="card card-metro overflow-hidden rounded-3">
+    <img src="pdf/01.jpg" alt="">
+    <!-- Image overlay -->
+    <div class="card-img-overlay d-flex"> 
+        <!-- Info -->
+        <div class="mt-auto card-text">
+            <a href="#" class="text-white mt-auto h5 stretched-link">Python</a>
+            <div class="text-white">32 Courses</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Course item -->
+<div class="col-sm-6 col-lg-4 col-xl-3">
+<!-- Image -->
+<div class="card card-metro overflow-hidden rounded-3">
+    <img src="pdf/01.jpg" alt="">
+    <!-- Image overlay -->
+    <div class="card-img-overlay d-flex"> 
+        <!-- Info -->
+        <div class="mt-auto card-text">
+            <a href="#" class="text-white mt-auto h5 stretched-link">Angular</a>
+            <div class="text-white">48 Courses</div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+                            
+                
+                </div>
+
+             
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Entry-->
+    </div>
+    <!--end::Content-->
+    <!--begin::Footer-->
+    
+    <!--end::Footer-->
+</div>
+{% endblock %}

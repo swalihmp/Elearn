@@ -1,0 +1,39 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/update_stud/" method="post">
+    {% csrf_token %}
+{% for student in viewstud %}
+        Admission Number : <br>
+        <input type="text" id="adnum" name="adnum" value="{{ student.adnum }}"><br>
+        Name : <br>
+        <input type="text" id="name" name="name" value="{{ student.name }}"><br>
+        Dob <br>
+        <input type="text" id="dob" name="dob" value="{{ student.dob }}"><br>
+        Mobile <br>
+        <input type="text" id="mob" name="mob" value="{{ student.mob }}"><br><br>
+        Department :<br>
+        <select id="sdptname" name="sdptname" value="{{ sdptname }}">
+            {% for results in showdpt %}
+            <option value="{{ results.hdpt }}">{{ results.hdpt }}</option>
+            {% endfor %}
+        </select><br>
+        Semester :
+        <select id="semno" name="semno" value="{{ semno }}">
+            <option selected disabled="true">--Select Semester--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select><br><br>
+        <button type="submit">Update</button>
+{% endfor %}
+    </form>
+    {% for message in messages %} 
+            <h4><p style="color: rgb(250, 6, 6);text-align:center">{{message}}</p></h4>
+    {% endfor %} 
+{% endblock %}

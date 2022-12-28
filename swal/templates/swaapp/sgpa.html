@@ -1,0 +1,52 @@
+{% extends 'sbase.html' %}
+{% load static %}
+{% block rightmenu %}
+<form action="/view_credit/" method="post">
+    {% csrf_token %}
+    Department :
+    <select id="dptname" name="dptname" value="{{ dptname }}">
+        {% for results in showdpt %}
+        <option value="{{ results.sdptname }}">{{ results.sdptname }}</option>
+        {% endfor %}
+    </select><br><br>
+    Sem No :
+    <select id="semno" name="semno" value="{{ semno }}">
+        <option selected disabled="true">--Select Semester--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select><br>
+    <button type="submit" value="Submit">Show</button>
+    <table>
+        <tr>
+            <th>Suname</th>
+            <th>Credit</th>
+            <th>Yor Grade</th>
+        </tr>
+        {% for credits in viewcredit %} 
+        <tr>
+            <td>{{credits.subname}}</td>
+            <td>{{credits.subcredit}}</td>
+            <td>
+                <select id="credit" name="credit" value="{{ credit }}">
+                    <option selected disabled="true">--Select Semester--</option>
+                    <option value="O">O</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="P">P</option>
+                    <option value="F">F</option>
+                </select>
+            </td>
+        </tr>
+        {% endfor %%}
+    </table>
+</form>
+{% endblock %}

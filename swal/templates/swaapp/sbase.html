@@ -1,0 +1,211 @@
+{% load static %}
+<html>
+    <head><title>{% block title %}base{% endblock %}</title>
+        <!--Only for demo purpose - no need to add.-->
+        <link rel="stylesheet" href="{% static 'css/gradestyle.css'  %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css'  %}">
+        <link rel="stylesheet" href="{% static 'css/styles-bundl.css'  %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        
+
+    </head>
+
+        <style>
+            table, th, td {
+                border: 1px solid black;
+              }
+              
+              th, td {
+                padding: 10px;
+              }
+            .container{
+                disply:flex;
+            }
+            .leftmenu{
+                float:left;
+                height:100vh;
+                width:30vh;
+            }
+            .rightmenu{
+            }
+            footer{
+                text-align: center;
+                background-color: #333;
+                color: #fff;
+                padding: 3px;
+            }
+            a:link{color:#0000ff;}
+	        a:visited{color:#0000a0;}
+	        a:hover{color:#0000ff;}
+	        a:active{color:#ff8000;}
+        </style>
+    </head>
+        <body>
+            <div class="aside aside-left d-flex flex-column" id="kt_aside">
+                <!--begin::Brand-->
+                <div class="aside-brand d-none d-lg-flex flex-column align-items-center flex-column-auto pt-10 pb-5">
+                    <!--begin::Logo-->
+                    <a href="#">
+                        <img alt="Logo" src="./assets/img/logo-03.png" style="width: 100%">
+                    </a>
+                    <!--end::Logo-->
+                </div>
+                <!--end::Brand-->
+                <!--begin::Nav Wrapper-->
+                <div class="aside-nav d-flex flex-column justify-content-lg-center align-items-center flex-column-fluid py-5 pt-lg-0 pb-lg-20">
+                    <!--begin::Nav-->
+                    <ul class="nav flex-column ">
+
+ <!--  <div class="container">
+                <div class="leftmenu">
+                    <div id="MainBox">
+                         <ul>
+                            <li><a href="/shome" target="main">Home</a></li>
+                            <li><a href="/stud_profile" target="main">View Profile</a></li>
+                            <li><a href="/viewcourse" target="main">View Course</a></li>
+                            <li><a href="/viewwork" target="main">View Works</a></li>
+                            <li><a href="/grading" target="main">Peer to Peer Grading</a></li>
+                         </ul>
+                     </div>
+                </div>-->
+
+
+
+
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="Latest Projects">
+                            <a href="/shome" target="main" class="nav-link btn btn-icon btn-icon-white btn-hover-primary btn-lg active">
+                              <span class="material-symbols-rounded">
+                                home
+                                </span>
+           
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="New Features">
+                            <a href="/viewcourse" target="main" class="nav-link btn btn-icon btn-icon-white btn-hover-icon-primary btn-lg">
+                              <span class="material-symbols-rounded">
+                                library_books
+                                </span>
+          
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="Latest Reports">
+                            <a href="/viewwork" target="main" class="nav-link btn btn-icon btn-icon-white btn-hover-icon-primary btn-lg">
+                              <span class="material-symbols-rounded" >
+                                smart_display
+                                </span>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="Project Management">
+                            <a href="#" class="nav-link btn btn-icon btn-icon-white btn-hover-icon-primary btn-lg">
+                              <span class="material-symbols-rounded">
+                                notifications
+                                </span>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="User Management">
+                            <a href="/stud_profile" class="nav-link btn btn-icon btn-icon-white btn-hover-icon-primary btn-lg">
+                              <span class="material-symbols-rounded">
+                                person
+                                </span>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="" data-original-title="Finance &amp; Accounting">
+                            <a href="/gradings" target="main" class="nav-link btn btn-icon btn-icon-white btn-hover-icon-primary btn-lg">
+                              <span class="material-symbols-rounded">
+                                settings
+                                </span>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Nav-->
+                </div>
+                <!--end::Nav Wrapper-->
+            </div>
+
+
+            
+          <!--  <div class="container">
+                <div class="leftmenu">
+                    <div id="MainBox">
+                         <ul>
+                            <li><a href="/shome" target="main">Home</a></li>
+                            <li><a href="/stud_profile" target="main">View Profile</a></li>
+                            <li><a href="/viewcourse" target="main">View Course</a></li>
+                            <li><a href="/viewwork" target="main">View Works</a></li>
+                            <li><a href="/grading" target="main">Peer to Peer Grading</a></li>
+                         </ul>
+                     </div>
+                </div>-->
+                <div class="rightmenu">
+                    {% block rightmenu %}
+                    <div class="subheader py-4 pt-lg-0 pb-lg-10" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center py-2 mr-1">
+                                <!--begin::Aside Offcanvas Toggle-->
+                                <button class="btn btn-icon btn-hover-icon-primary mr-1 pl-0 justify-content-start d-none d-lg-flex" id="kt_aside_offcanvas_toggle">
+                                    <span class="svg-icon svg-icon-2x">
+                                        <!--begin::Svg Icon | path:/keen/theme/demo2/dist/assets/media/svg/icons/Text/Toggle-Right.svg-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22 11.5C22 12.3284 21.3284 13 20.5 13H3.5C2.6716 13 2 12.3284 2 11.5C2 10.6716 2.6716 10 3.5 10H20.5C21.3284 10 22 10.6716 22 11.5Z" fill="black"></path>
+                                                <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.5 20C15.3284 20 16 19.3284 16 18.5C16 17.6716 15.3284 17 14.5 17H3.5C2.6716 17 2 17.6716 2 18.5C2 19.3284 2.6716 20 3.5 20H14.5ZM8.5 6C9.3284 6 10 5.32843 10 4.5C10 3.67157 9.3284 3 8.5 3H3.5C2.6716 3 2 3.67157 2 4.5C2 5.32843 2.6716 6 3.5 6H8.5Z" fill="black"></path>
+                                            </g>
+                                        </svg>
+                                        <!--end::Svg Icon-->
+                                    </span>
+                                </button>
+                                <!--end::Aside Offcanvas Toggle-->
+                                <!--begin::Page Heading-->
+                                <div class="d-flex flex-column mr-5">
+                                    <!--begin::Page Title-->
+                                    <h4 class="text-dark font-weight-bold py-1 mr-5 my-0">Dashboard 
+                                    <small class="text-muted">updates and statistics</small></h4>
+                                    <!--end::Page Title-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                            <!--begin::Toolbar-->
+                            <div class="d-flex align-items-center flex-wrap py-2">
+                                <!--begin::Daterange-->
+                               
+                               <div class="d-md-flex justify-content-between align-items-center text-md-start p-4">
+            <div class="d-md-flex align-items-center">
+              <div class="img-thumbnail rounded-circle position-relative flex-shrink-0 mx-auto mb-2 mx-md-0 mb-md-0" style="width: 6.375rem;">
+                <img class="rounded-circle img-l" src="assets/img/profile/profile.jpg" alt="Susan Gardner">
+            </div>
+              <div class="ps-md-3">
+                <h3 class="fs-base mb-0">Susan Gardner</h3>
+                <span class="text-accent fs-sm">s.gardner@example.com</span>
+              </div>
+            </div>
+            <a class="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0" href="#account-menu" data-bs-toggle="collapse" aria-expanded="false">
+                <i class="ci-menu me-2"></i>Account menu</a>
+          </div>
+                                <!--end::Dropdown-->
+                            </div>
+                            <!--end::Toolbar-->
+                        </div>
+                    </div>
+
+                    {% endblock %}
+
+                </div>
+            </div>
+        </body>

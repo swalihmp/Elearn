@@ -1,0 +1,17 @@
+{% extends 'hbase.html' %}
+{% load static %}
+{% block rightmenu %}
+    <form action="/add_ancm/" method="post">
+        {% csrf_token %}
+        Department :
+        <select id="dptname" name="dptname" value="{{ dptname }}">
+            {% for results in showdpt %}
+            <option value="{{ results.hdpt }}">{{ results.hdpt }}</option>
+            {% endfor %}
+        </select><br>
+        <p><u>Announcement :</u></p>
+        <textarea id="anmsg" name="anmsg" rows="4" cols="30" value="{{ anmsg }}">
+        </textarea>
+        <button type="submit">submit</button>
+    </form>
+{% endblock %}

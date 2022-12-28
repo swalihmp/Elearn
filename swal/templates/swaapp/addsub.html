@@ -1,0 +1,45 @@
+{% extends 'tbase.html' %}
+{% load static %}
+{% block rightmenu %}
+        <form action="/addsub/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Department :
+            <select id="subdpt" name="subdpt" value="{{ subdpt }}">
+                {% for results in showdpt %}
+                <option value="{{ results.dptname }}">{{ results.dptname }}</option>
+                {% endfor %}
+            </select><br>
+            Subject Code : <br>
+            <input type="text" id="subcode" name="subcode" value="{{ subcode }}"><br>
+            Subject Name : <br>
+            <input type="text" id="subname" name="subname" value="{{ subname }}"><br>
+            Subject Credit : <br>
+            <input type="text" id="subcredit" name="subcredit" value="{{ subcredit }}"><br>
+            Semester :
+            <select id="subsemno" name="subsemno" value="{{ subsemno }}">
+               <option selected disabled="true">--Select Semester--</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select><br><br>
+            Teacher :
+            <select id="subteach" name="subteach" value="{{ subteach }}">
+                {% for results in showdpt %}
+                <option value="{{ results.tname }}">{{ results.tname }}</option>
+                {% endfor %}
+            </select><br>
+            Teacher Id :
+            <select id="subteachid" name="subteachid" value="{{ subteachid }}">
+                {% for results in showdpt %}
+                <option value="{{ results.tid }}">{{ results.tid }}</option>
+                {% endfor %}
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+{% endblock %}
+    

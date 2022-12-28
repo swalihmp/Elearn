@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block rightmenu %}
+        <form action="/add_hod" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Hod Id : <br>
+            <input type="text" id="hid" name="hid" value="{{ hid }}"><br>
+            Name : <br>
+            <input type="text" id="hname" name="hname" value="{{ hname }}"><br>
+            Dob <br>
+            <input type="date" id="hdob" name="hdob" value="{{ hdob }}"><br>
+            MObile <br>
+            <input type="text" id="hmob" name="hmob" value="{{ hmob }}"><br>
+            Department :<br>
+            <select id="hdpt" name="hdpt" value="{{ hdpt }}">
+                <option selected disabled="true">--Select Department--</option>
+                <option value="CSE">CSE</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="CIVIL">MECH</option>
+                <option value="CIVIL">ECE</option>
+                <option value="CIVIL">EEE</option>
+                <option value="GENERAL">GENERAL</option>
+            </select><br><br>
+            Upload Student Image :
+            <input type="file" id="himage" name="himage" value="{{ himage }}"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        {% endblock %}
